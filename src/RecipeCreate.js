@@ -1,12 +1,17 @@
+import React from "react";
+
 import { useState } from "react";
 
 function RecipeCreate({ addRecipe }) {
   const [formData, setFormData] = useState({
     name: "",
+    cuisine:"",
+    photo:"",
     ingredients: "",
-    instructions: ""
+    preparation: ""
   });
-
+  
+ 
   const handleChange = ({ target }) => {
     setFormData({
       ...formData,
@@ -19,11 +24,13 @@ function RecipeCreate({ addRecipe }) {
     addRecipe(formData);         
     setFormData({                
       name: "",
+      cuisine:"",
+      photo:"",
       ingredients: "",
-      instructions: ""
+      preparation: ""
     });
   };
-
+  
   return (
     <form name="create" onSubmit={handleSubmit}>
       <table>
@@ -76,11 +83,11 @@ function RecipeCreate({ addRecipe }) {
             </td>
           </tr>
           <tr>
-            <td>Instructions:</td>
+            <td>Preparation:</td>
             <td>
               <textarea
                 name="preparation"
-                value={formData.instructions}
+                value={formData.preparation}
                 onChange={handleChange}
                 required
               />
@@ -89,7 +96,7 @@ function RecipeCreate({ addRecipe }) {
           <tr>
             <td></td>
             <td>
-              <button type="submit">Create</button>
+              <button type="submit" name="create">Create</button>
             </td>
           </tr>
         </tbody>

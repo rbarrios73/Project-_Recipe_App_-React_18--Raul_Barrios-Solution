@@ -35,32 +35,25 @@ function RecipeCreate({ addRecipe }) {
     <form name="create" onSubmit={handleSubmit}>
       <table>
         <tbody>
-          <tr>
-            <td>Name:</td>
-            <td>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>Cuisine:</td>
-            <td>
-              <input
-                type="text"
-                name="cuisine"
-                value={formData.cuisine}
-                onChange={handleChange}
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-          <td>Photo URL:</td>
+        <tr>
+          <td>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              name="cuisine"
+              value={formData.cuisine}
+              onChange={handleChange}
+              required
+            />
+          </td>
           <td>
             <input
               type="text"
@@ -70,35 +63,26 @@ function RecipeCreate({ addRecipe }) {
               required
             />
           </td>
+          <td>
+            <textarea
+              name="ingredients"
+              value={formData.ingredients}
+              onChange={handleChange}
+              required
+            />
+          </td>
+          <td>
+            <textarea
+              name="preparation"
+              value={formData.preparation}
+              onChange={handleChange}
+              required
+            />
+          </td>
+          <td>
+            <button type="submit" name="create">Create</button>
+          </td>
         </tr>
-          <tr>
-            <td>Ingredients:</td>
-            <td>
-              <textarea
-                name="ingredients"
-                value={formData.ingredients}
-                onChange={handleChange}
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>Preparation:</td>
-            <td>
-              <textarea
-                name="preparation"
-                value={formData.preparation}
-                onChange={handleChange}
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <button type="submit" name="create">Create</button>
-            </td>
-          </tr>
         </tbody>
       </table>
     </form>

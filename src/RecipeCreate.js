@@ -2,7 +2,11 @@ import React from "react";
 
 import { useState } from "react";
 
+// RecipeCreate component is responsible for rendering the form
+// to create a new recipe and manage its state
 function RecipeCreate({ addRecipe }) {
+
+  // Initialize form data state with empty values for each field
   const [formData, setFormData] = useState({
     name: "",
     cuisine:"",
@@ -11,7 +15,7 @@ function RecipeCreate({ addRecipe }) {
     preparation: ""
   });
   
- 
+  // Handler for input changes: updates the corresponding form field
   const handleChange = ({ target }) => {
     setFormData({
       ...formData,
@@ -19,6 +23,7 @@ function RecipeCreate({ addRecipe }) {
     });
   };
 
+  // Handler for form submission: prevents default behavior,
   const handleSubmit = (event) => {
     event.preventDefault();
     addRecipe(formData);         
@@ -32,6 +37,7 @@ function RecipeCreate({ addRecipe }) {
   };
   
   return (
+    // Form for creating a new recipe, submitting calls handleSubmit
     <form name="create" onSubmit={handleSubmit}>
       <table>
         <tbody>

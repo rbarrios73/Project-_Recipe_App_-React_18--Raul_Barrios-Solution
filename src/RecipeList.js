@@ -1,6 +1,6 @@
 import React from "react";
 
-
+// Component to render a single row in the recipe table
 function RecipeRow({ recipe, index, onDelete }) {
     return (
       <tr>
@@ -18,6 +18,7 @@ function RecipeRow({ recipe, index, onDelete }) {
     );
   }
 
+// Component to render the full list of recipes in a table
 function RecipeList({ recipes, deleteRecipe }) {
   return (
     <div className="recipe-list">
@@ -32,6 +33,7 @@ function RecipeList({ recipes, deleteRecipe }) {
           </tr>
         </thead>
         <tbody>
+           {/* Map over the recipes array and render each row using RecipeRow */}
            {recipes.map((recipe, index) => (
             <RecipeRow
               key={index}
